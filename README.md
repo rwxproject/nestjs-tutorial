@@ -82,8 +82,17 @@ npm run typeorm migration:run
 ```
 
 ---
-
 ## Production
+
+### Heroku
+
+```
+ heroku create
+ heroku addons:create heroku-postgresql:hobby-dev
+ heroku config:set COOKIE_KEY=random-string
+ heroku config:set NODE_ENV=production
+ git push heroku master
+ ```
 
 The auto-generated migration won't work properly when we move our app to production. Please replace the contents of your initial-schema file with the following:
 
